@@ -3,7 +3,7 @@
 <h3><%= link_to "Add Recipe", new_recipe_path %></h3>
 
 
-  <% @category.each do |recipe| %>
+  <% @recipes.each do |recipe| %>
     <div class="recipe">
       <h2><%= link_to recipe.title, recipe %></h2>
       <img src="<%= recipe.img_url %>">

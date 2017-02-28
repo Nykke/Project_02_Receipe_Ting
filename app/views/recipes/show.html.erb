@@ -21,7 +21,7 @@
 <h4>Comments <%= link_to "New Comment", new_recipe_comment_path(@recipe) %></h4>
 
  <% @recipe.comments.each do |comment| %>
-    <div class="comments">
+    <div>
       <h4><%= comment.title %></h4>
       <p><%= comment.body %></p>
       <h5><%= comment.author %>, <%= comment.updated_at %></h5>

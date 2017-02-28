@@ -1,5 +1,5 @@
 
-<%= form_for [@category, @recipe, @comment] do |f| %>
+<%= form_for [@recipe, @comment] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -10,8 +10,8 @@
   <%= f.text_field :body %>
 
   <%=f.submit %>
-  <% end %>
+<% end %>
 
-  <%= form_for [@category, @recipe, @comment], method: :delete do |f| %>
-    <%= f.submit "Delete!", class: "delete" %>
+  <%= form_for [@recipe,@comment], method: :delete do |f| %>
+     <%= f.submit "Delete!", class: "delete" %>
   <% end %>

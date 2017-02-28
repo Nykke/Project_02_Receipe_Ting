@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @recipe = Recipe.new
+    @recipes = Recipe.where(params[:category_id] == @category)
   end
 
   def new

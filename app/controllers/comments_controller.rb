@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.new
   end
 
