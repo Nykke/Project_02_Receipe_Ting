@@ -16,4 +16,15 @@
         </ul>
   </div>
 
-<h3><span><%= link_to "Edit Recipe", edit_recipe_path%></span></h3>
+<h6><%= link_to "Edit Recipe", edit_recipe_path%> | <%= link_to "Delete Recipe", recipe_path, method: :delete %></h6>
+
+<h4>Comments <%= link_to "New Comment", new_recipe_comment_path(@recipe) %></h4>
+
+ <% @recipe.comments.each do |comment| %>
+    <div class="comments">
+      <h4><%= comment.title %></h4>
+      <p><%= comment.body %></p>
+      <h5><%= comment.author %>, <%= comment.updated_at %></h5>
+      <h6><%= link_to "Edit Comment", edit_recipe_comment_path(@recipe,comment) %> | <%= link_to "Delete Comment", recipe_comment_path(@recipe, comment), method: :delete %></h6>
+    </div>
+  <% end %>
