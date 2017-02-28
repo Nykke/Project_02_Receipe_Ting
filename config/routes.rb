@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-resources :recipes do
-  resources :comments
+root to: "categories#index"
+
+resources :categories
+  resources :recipes do
+    resources :comments, except: :index
 end
 
 end
