@@ -1,0 +1,21 @@
+<h3>Edit Recipe</h3>
+
+<%= form_for @recipe do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :ingredients %>
+  <%= f.text_field :ingredients %>
+
+  <%= f.label :directions %>
+  <%= f.text_field :directions %>
+
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %>
+
+<%= f.submit %>
+<% end %>
+
+<%= form_for @recipe, method: :delete do |f| %>
+  <%= f.submit "Delete", class: "delete" %>
+  <% end %>
