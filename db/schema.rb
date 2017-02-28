@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227020908) do
+ActiveRecord::Schema.define(version: 20170228155509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "primary_color"
+    t.string   "secondary_color"
+    t.string   "img_url"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string   "title"
@@ -33,6 +42,9 @@ ActiveRecord::Schema.define(version: 20170227020908) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "directions"
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_recipes_on_category_id", using: :btree
   end
 
+  add_foreign_key "recipes", "categories"
 end
