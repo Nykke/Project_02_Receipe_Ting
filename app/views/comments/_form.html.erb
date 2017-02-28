@@ -1,0 +1,17 @@
+
+<%= form_for [@recipe, @comment] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%=f.submit %>
+  <% end %>
+
+  <%= form_for [@recipe,@comment], method: :delete do |f| %>
+    <%= f.submit "Delete!", class: "delete" %>
+  <% end %>
