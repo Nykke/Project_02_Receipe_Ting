@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @recipes = Recipe.where(params[:category_id] == @category)
+    redirect_to recipe_path
   end
 
   def new
