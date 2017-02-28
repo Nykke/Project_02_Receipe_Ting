@@ -1,9 +1,11 @@
 <h2><%= @category.name %></h2>
 
-<h3><%= link_to "Add Recipe", new_recipe_path %></h3>
+<h3><%# link_to "Add Recipe", new_recipe_path %></h3>
 
-    <% @categories_id  %>
-      <div class="recipe">
-        <h2><%= link_to @recipes.title %></h2>
-        <img src="<%= @recipes.img_url %>">
-      </div>
+<% @category.recipes.each do |recipe| %>
+<div class="recipe">
+  <a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a>
+  <%= image_tag recipe.img_url %>
+
+
+<%end %>
