@@ -1,8 +1,7 @@
 <h2><%= @category.name %></h2>
 
-<!-- <a href="/recipes/new/<%# @category.id %>"><%#"add new recipe"%></a> -->
-<h3><%#link_to "Add Recipe", new_recipe_path(@category.id) %></h3>
-
+<h3><%=link_to "Add Recipe", new_category_recipe_path(@category) %></h3>
+  
 <% @category.recipes.each do |recipe| %>
 <div class="recipe">
   <h2><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></h2>
