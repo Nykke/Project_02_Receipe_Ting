@@ -1,6 +1,6 @@
 <h2> Welcome to Recipe Ting! The place where the people are friendly and the dishes are scrumptous! </h2>
 
-<h3><%= link_to "All Recipes", recipes_path %> </h3>
+
 <% @categories.each do |category| %>
   <a href="/categories/<%= category.id %>"><img src="<%= category.img_url %>"></a>
 

@@ -1,6 +1,6 @@
 <h3>Edit Recipe</h3>
 
-<%= form_for @recipe do |f| %>
+<%= form_for [@category, @recipe] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -16,6 +16,6 @@
 <%= f.submit %>
 <% end %>
 
-<%= form_for @recipe, method: :delete do |f| %>
+<%= form_for [@category, @recipe], method: :delete do |f| %>
   <%= f.submit "Delete", class: "delete" %>
   <% end %>
