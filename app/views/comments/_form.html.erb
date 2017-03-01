@@ -12,6 +12,6 @@
   <%=f.submit %>
 <% end %>
 
-  <%= form_for [@recipe,@comment], method: :delete do |f| %>
+  <%= form_for [@recipe, @comment], method: :delete do |f| %>
      <%= f.submit "Delete!", class: "delete" %>
   <% end %>

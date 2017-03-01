@@ -25,6 +25,8 @@
       <h4><%= comment.title %></h4>
       <p><%= comment.body %></p>
       <h5><%= comment.author %>, <%= comment.updated_at %></h5>
-      <h6><%= link_to "Edit Comment", edit_recipe_comment_path(@recipe,comment) %> | <%= link_to "Delete Comment", recipe_comment_path(@recipe, comment), method: :delete %></h6>
+      <% if (comment.user == current_user) && current_user %>
+      <h6><%= link_to "Edit Comment", edit_recipe_comment_path(@recipe,comment) %>  | <%= link_to "Delete Comment", recipe_comment_path(@recipe, comment), method: :delete %></h6>
+      <% end %>
     </div>
   <% end %>

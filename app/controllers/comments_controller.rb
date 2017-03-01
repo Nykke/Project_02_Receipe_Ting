@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+before_action :authenticate_user!, only:[:create, :destroy]
   def show
     @comment = Comment.find(params[:id])
   end
@@ -10,8 +11,12 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.find(params[:recipe_id])
-    @comment = Comment.find(params[:id])
+      @recipe = Recipe.find(params[:recipe_id])
+      @comment = Comment.find(params[:id])
+        unless @comment.user == current_user
+
+          flash[:alert] = "Only the author can delete this comment!"
+        end
   end
 
   def update
@@ -24,16 +29,16 @@ class CommentsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @comment = @recipe.comments.create(comment_params)
+    @comment = @recipe.comments.create!(comment_params.merge(user: current_user))
 
-    redirect_to recipe_path(@recipe)
+   redirect_to recipe_path(@recipe)
   end
 
   def destroy
+    @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.find(params[:id])
-    @comment.destroy
-
-    redirect_to recipe_path(@comment.recipe)
+     @comment.destroy
+     redirect_to recipe_path(@recipe)
   end
 
   private
