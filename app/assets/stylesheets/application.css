@@ -14,22 +14,14 @@
  *= require_self
  */
 
-html {
-  font-family: 'Monda', sans-serif;
-}
-h1 {
-  text-align: center;
-}
-
-#instructions li {
+#instructions li{
   list-style-type: none;
 }
-img {
+img{
   height: 600px;
   width: 800px;
   display: flex;
   align-content: space-around;
   align-items: center;
   margin: 10px;
-  font
 }
