@@ -1,6 +1,6 @@
 <h3>Share your Favorite Recipes and help us expand our tastebuds!</h3>
 
-<%= form_for @recipe do |f| %>
+<%= form_for([@category, @recipe]) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 

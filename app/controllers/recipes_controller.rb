@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @category = Category.find(params[:category_id])
     @recipe = Recipe.new
   end
 
@@ -25,8 +26,10 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create!(recipe_params)
-    redirect_to recipes_path
+    @category = Category.find(params[:category_id])
+    @recipe = @category.recipes.create!(recipe_params)
+
+    redirect_to category_path(@category)
   end
 
   def destroy
