@@ -1,10 +1,10 @@
 <h2><%= @category.name %></h2>
 
-<h3><%# link_to "Add Recipe", new_recipe_path %></h3>
+<h3><%= link_to "Add Recipe", new_recipe_path(@category) %></a></h3>
 
 <% @category.recipes.each do |recipe| %>
 <div class="recipe">
-  <a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a>
+  <h2><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></h2>
   <%= image_tag recipe.img_url %>
 
 

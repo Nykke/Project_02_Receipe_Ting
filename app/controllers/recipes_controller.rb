@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
   end
 
   def edit
-  @recipe = Recipe.find(params[recipe_params])
+    @recipe = Recipe.find(params[recipe_params])
   end
 
   def update
@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create!(recipe_params)
-    redirect_to recipes_path
+    redirect_to category_recipe_path(@category.recipe)
   end
 
   def destroy

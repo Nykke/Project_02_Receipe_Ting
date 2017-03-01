@@ -20,10 +20,16 @@ html {
 h1 {
   text-align: center;
 }
-img {
-  height: 300px;
-  width: 400px;
-}
+
 #instructions li {
   list-style-type: none;
+}
+img {
+  height: 600px;
+  width: 800px;
+  display: flex;
+  align-content: space-around;
+  align-items: center;
+  margin: 10px;
+  font
 }
