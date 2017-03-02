@@ -23,15 +23,23 @@ before_action :authenticate_user!, only:[:create, :destroy]
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
-
-    redirect_to recipe_path(@recipe)
+    # if validates?
+        redirect_to recipe_path(@recipe)
+    # else
+    #   flash[:alert] = "input is required!"
+    #   render :new
+    # end
   end
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @comment = @recipe.comments.create!(comment_params.merge(user: current_user))
-
-   redirect_to recipe_path(@recipe)
+    # if validates?
+        redirect_to recipe_path(@recipe)
+    # else
+    #   flash[:alert] = "input is required!"
+    #   render :new
+    # end
   end
 
   def destroy

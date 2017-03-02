@@ -26,15 +26,22 @@ before_action :authenticate_user!, only:[:create, :destroy]
   def update
     @recipe = Recipe.find(params[:id])
     @recipe.update(recipe_params)
-
-    redirect_to recipe_path
+    if validates?
+      redirect_to recipe_path
+    else
+      flash[:alert] = "input is required!"
+    end
   end
 
   def create
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.create!(recipe_params.merge(user: current_user))
-
-    redirect_to category_path(@category)
+    # if validates?
+      redirect_to category_path(@category)
+    # else
+    #   flash[:alert] = "input is required!"
+    #   render :new
+    # end
   end
 
   def destroy
