@@ -5,6 +5,7 @@
       <h3>Ingredients</h3>
       <ul>
         <% @recipe.ingredients.split(", ").each do |i| %>
+          <div style="white-space: pre-line;">
           <li><%= i %></li>
         <% end %>
       </ul>
