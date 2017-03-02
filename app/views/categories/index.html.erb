@@ -3,7 +3,7 @@
 
 <% @categories.each do |category| %>
   <div class="category">
-    <p><%=category.name %><a href="/categories/<%= category.id %>"><img src="<%= category.img_url %>"></a></p>
+    <p><%=category.name %><a href="/categories/<%= category.id %>"></p><img class= "this" src="<%= category.img_url %>"></a></p>
   </div>
 
   <% end %>
