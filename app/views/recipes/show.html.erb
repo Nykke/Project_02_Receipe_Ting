@@ -1,7 +1,7 @@
 <h2><%= @recipe.title %></h2>
 
   <div class="showrecipe">
-    <img src="<%= @recipe.img_url %>">
+    <img class="rimage" src="<%= @recipe.img_url %>">
       <h3>Ingredients</h3>
       <ul>
         <% @recipe.ingredients.split(", ").each do |i| %>
