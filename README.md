@@ -2,21 +2,37 @@
 
 User Stories: <br />
 <br />
-MVP and Silver:- <br />
+<br />
 - As a User I should be able to see recipes without logging in <br />
 - As a User I should be able to see comments without logging in <br />
-- As a User I should be able to search recipes by categories/tag names <br />
+- As a User I should be able to search recipes by categories <br />
 - As a User I should be able to put my recipes in categories <br />
-- As a User I should be able to be able to see an automatic  generated theme for the recipe currently viewing <br />
-- As a User I should be able to post a recipe to site <br />
-- As a User I should be able to make comments on recipes <br />
-- As a User I should be able to edit my own recipe <br />
-- As a User I should be able to delete my own recipe <br />
+- As a User who is a member I should be able to post a recipe to site <br />
+- As a User who is a member I should be able to make comments on recipes <br />
+- As a User who is a member  I should be able to edit my own recipe <br />
+- As a User who is a member I should be able to delete my own recipe <br />
 <br />
 <br />
-Gold:- <br />
-- As a User I should be able to create my own account <br />
-- As a User I should be able to only edit/delete my own posts when logged in <br />
-- As a User I should be able to comment only when logged in <br />
-- As a User I should be able to only create a new post when logged in <br />
-- As a User I should be able to follow other Users <br />
+Sources:<br />
+<br />
+- What's cooking in Guyana by Carnegie School of Home Economics <br />
+- www.seriouseats.com <br />
+- 4.bp.blogspot.com <br />
+- www.wikihow.com <br />
+- images-gmi-pmc.edge-generalmills.com <br />
+- www.realsimple.com <br />
+<br />
+<br />
+Technologies Used:<br />
+<br />
+- Trello <br />
+- StackOverflow <br />
+- W3Schools <br />
+<br />
+<br />
+Things to work on:<br />
+<br />
+- User profiles <br />
+- rating system <br />
+- validation for form entry <br />
+- Users being able to follow each other <br />
