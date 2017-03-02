@@ -26,11 +26,11 @@ before_action :authenticate_user!, only:[:create, :destroy]
   def update
     @recipe = Recipe.find(params[:id])
     @recipe.update(recipe_params)
-    if validates?
+    # if validates?
       redirect_to recipe_path
-    else
-      flash[:alert] = "input is required!"
-    end
+    # else
+    #   flash[:alert] = "input is required!"
+    # end
   end
 
   def create

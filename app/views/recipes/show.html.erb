@@ -10,10 +10,12 @@
       </ul>
       <h3>Directions</h3>
         <ul id="instructions">
-          <% @recipe.directions.split(", ").each do |i| %>
-          <li><%= i %></li>
-          <% end %>
+            <% @recipe.directions.split(", ").each do |i| %>
+              <div style="white-space: pre-line;">
+                <li><%= i %></li>
+              <% end %>
         </ul>
+      </div>
   </div>
 
 <h6><%= link_to "Edit Recipe", edit_recipe_path%> | <%= link_to "Delete Recipe", recipe_path, method: :delete %></h6>
