@@ -52,7 +52,7 @@ h1{
   padding: 28px;
 }
 div.recipe{
-  width: 55%;
+  width: 53%;
   background-color: #faebd7;
   box-shadow: 0 6px 12px 0 #666B6D, 0 8px 20px 0 #838686;
   margin-bottom: 10px;
@@ -75,4 +75,5 @@ div.recipe{
 textarea {
   height: 150px;
   width: 400px;
+  white-space: pre-line;
 }
