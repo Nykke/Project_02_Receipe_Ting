@@ -7,8 +7,8 @@
 <% @category.recipes.each do |recipe| %>
 <div class="recipe">
   <div class="food">
-    <img class="rimage" src="<%= recipe.img_url %>">
-      <a href="/recipes/<%= recipe.id %>"><p class="rtitle"><%= recipe.title %></a></p>
+    <a href="/recipes/<%= recipe.id %>"><img class="rimage" src="<%= recipe.img_url %>"></a>
+      <p class="rtitle"><%= recipe.title %></p>
   </div>
 </div>
 
