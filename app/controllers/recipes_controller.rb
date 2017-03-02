@@ -7,7 +7,7 @@ before_action :authenticate_user!, only:[:create, :destroy]
 
   def show
     @recipe = Recipe.find(params[:id])
-  
+
   end
 
   def new

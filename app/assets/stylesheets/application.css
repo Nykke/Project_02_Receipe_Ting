@@ -49,10 +49,12 @@ h1{
   margin: 5px;
   height: 350px;
   width: 500px;
-  padding: 28px;
+  padding: 34px;
 }
 div.recipe{
-  width: 53%;
+  display: flex;
+  height: 39em;
+  width: 45em;
   background-color: #faebd7;
   box-shadow: 0 6px 12px 0 #666B6D, 0 8px 20px 0 #838686;
   margin-bottom: 10px;
@@ -68,7 +70,7 @@ div.recipe{
   font-weight: bold;
   text-transform: uppercase;
 }
-.addrecipe{
+.addrecipe, .allrecipes{
   font-size: 30px;
   font-variant: small-caps;
 }
@@ -76,4 +78,7 @@ textarea {
   height: 150px;
   width: 400px;
   white-space: pre-line;
+}
+.alert {
+  color: #ff0000;
 }
