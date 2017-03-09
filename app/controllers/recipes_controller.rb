@@ -1,13 +1,12 @@
 class RecipesController < ApplicationController
 
-before_action :authenticate_user!, only:[:create, :destroy]
+  before_action :authenticate_user!, only:[:create, :destroy]
   def index
     @recipes = Recipe.all
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-
   end
 
   def new
@@ -17,27 +16,25 @@ before_action :authenticate_user!, only:[:create, :destroy]
 
   def edit
     @recipe = Recipe.find(params[:id])
-      unless @recipe.user == current_user
-
-         flash[:alert] = "Only the Chef can edit this Recipe!"
-      end
+    unless @recipe.user == current_user
+      # nice UX!
+      flash[:alert] = "Only the Chef can edit this Recipe!"
+    end
   end
 
   def update
     @recipe = Recipe.find(params[:id])
     @recipe.update(recipe_params)
-    # if validates?
-      redirect_to recipe_path
-    # else
-    #   flash[:alert] = "input is required!"
-    # end
+
+    # see my comment in the comments_controller on validations
+    redirect_to recipe_path
   end
 
   def create
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.create!(recipe_params.merge(user: current_user))
     # if validates?
-      redirect_to category_path(@category)
+    redirect_to category_path(@category)
     # else
     #   flash[:alert] = "input is required!"
     #   render :new
@@ -47,15 +44,15 @@ before_action :authenticate_user!, only:[:create, :destroy]
   def destroy
 
     @recipe = Recipe.find(params[:id])
-      if @recipe.user == current_user
-         @recipe.destroy
-      else
-    flash[:alert] = "Only the Chef can delete this Recipe!"
-      end
-      redirect_to recipes_path
+    if @recipe.user == current_user
+      @recipe.destroy
+    else
+      flash[:alert] = "Only the Chef can delete this Recipe!"
+    end
+    redirect_to recipes_path
   end
 
-private
+  private
   def recipe_params
     params.require(:recipe).permit(:title, :ingredients, :img_url, :directions)
   end

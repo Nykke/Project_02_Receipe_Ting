@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Recipe Ting</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Recipe Ting</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <h1><a href="/categories">RECIPE TING!</a> </h1>
+<body>
+  <h1><a href="/categories">RECIPE TING!</a> </h1>
 
-    <% if !current_user %>
-      <h2 class="registration"><%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %></h2>
-    <% else %>
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-      <%= current_user.email %>
-    <% end %>
+  <!-- Well-designed application layout! -->
+  
+  <% if !current_user %>
+    <h2 class="registration"><%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %></h2>
+  <% else %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <%= current_user.email %>
+  <% end %>
 
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+</body>
 </html>

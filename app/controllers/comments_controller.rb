@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
-before_action :authenticate_user!, only:[:create, :destroy]
+  before_action :authenticate_user!, only:[:create, :destroy]
+
   def show
     @comment = Comment.find(params[:id])
   end
@@ -11,31 +12,32 @@ before_action :authenticate_user!, only:[:create, :destroy]
   end
 
   def edit
-      @recipe = Recipe.find(params[:recipe_id])
-      @comment = Comment.find(params[:id])
-        unless @comment.user == current_user
+    @recipe = Recipe.find(params[:recipe_id])
+    @comment = Comment.find(params[:id])
 
-          flash[:alert] = "Only the author can delete this comment!"
-        end
+    # nice use of unless! very ruby
+    unless @comment.user == current_user
+      flash[:alert] = "Only the author can delete this comment!"
+    end
   end
 
   def update
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.find(params[:id])
-    @comment.update(comment_params)
-    # if validates?
-        redirect_to recipe_path(@recipe)
-    # else
-    #   flash[:alert] = "input is required!"
-    #   render :new
-    # end
+    # you can validate like this:
+    if @comment.update(comment_params)
+      redirect_to recipe_path(@recipe)
+    else
+      flash[:alert] = "input is required!"
+      render :edit
+    end
   end
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @comment = @recipe.comments.create!(comment_params.merge(user: current_user))
     # if validates?
-        redirect_to recipe_path(@recipe)
+    redirect_to recipe_path(@recipe)
     # else
     #   flash[:alert] = "input is required!"
     #   render :new
@@ -45,8 +47,8 @@ before_action :authenticate_user!, only:[:create, :destroy]
   def destroy
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.find(params[:id])
-     @comment.destroy
-     redirect_to recipe_path(@recipe)
+    @comment.destroy
+    redirect_to recipe_path(@recipe)
   end
 
   private
