@@ -8,10 +8,11 @@
           <div style="white-space: pre-line;">
             <li><%= i %></li>
         <% end %>
-        </div> 
+        </div>
       </ul>
       <h3>Directions</h3>
         <ul id="instructions">
+          <!-- Clever! Sometimes, commas might not be separators between actual steps. "Quickly, crack 3 eggs and whisk" There "Quickly" would be treated by your code as its own step; you might be able to add in a check to see if it's one word item. I really like the thought behind this feature regardless! -->
             <% @recipe.directions.split(", ").each do |i| %>
               <div style="white-space: pre-line;">
                 <li><%= i %></li>

@@ -1,5 +1,14 @@
 Recipe Ting Goals
 
+<!-- changed this file into a markdown `.md` file; learning MD is easy, it's like easier HTML. there is a like 2 second learning curve -->
+<!-- markdown cheatsheet -->
+<!-- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
+
+<!-- browser-based ERD design tool -->
+<!--  https://www.lucidchart.com/pages/tour/ER_diagram_tool -->
+
+<!-- This ERD tool is a rails gem -->
+<!-- https://github.com/voormedia/rails-erd -->
 mvp:
 
 Models and Migrations:-
@@ -23,4 +32,4 @@ Add User model using Devise.
 User should be able to sign up, sign in and sign out of the app
 Only logged-in users should be able to create a new recipe or comment
 A user can only update or delete a recipe or comment he/she created
-validation on forms, NEED! 
+validation on forms, NEED!
